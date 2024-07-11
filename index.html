@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bento Weather App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css">
+    <link rel="stylesheet" href="css/bento.css">
+    <link rel="stylesheet" href="css/bg.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/switch.css">
+</head>
+
+<body onload="startTime()" id="background">
+    <main id="background">
+    <div class="container">
+
+        <div class="a glass">
+          <div class="weather">
+            <div class="details">
+              <div class="col" id="">
+                <i class='fas fa-temperature-low' style='font-size:40px'></i>
+                <div class="info">
+                    <p class="humidity" id="minTemperature"></p>
+                    <p class="humidity_info">Minimum Temperature</p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      
+        <div class="b glass">
+          <div class="weather">
+            <div class="details">
+              <div class="col" id="">
+                <i class='fas fa-temperature-high' style='font-size:40px'></i>
+                <div class="info">
+                    <p class="humidity" id="maxTemperature"></p>
+                    <p class="humidity_info">Maximum Temperature</p>
+                </div>
+              </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="c glass">Dark Mode:
+            <label class="switch" title="Set background to dark mode">
+                <input type="checkbox" id="toggle-background-checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="d glass">
+          <div class="centered">
+            <div class="dateFormat" id="dateFormat"></div>
+            <div class="timeFormat"  id="timeFormat"></div>
+            </div>
+        </div>
+
+        <div class="e glass">
+          <div class="weather">
+            <div class="row_details">
+
+              <div class="row" id="">
+                <i class='far fa-sun' style='font-size:40px'></i>
+                <div class="info">
+                    <p class="sunrise" id="rise"></p>
+                    <p class="sunrise_info">Sunrise</p> 
+                </div>
+              </div>
+            
+              <div class="row" id="">
+                <i class='far fa-moon' style='font-size:40px'></i>
+                <div class="info">
+                    <p class="sunset" id="set"></p>
+                    <p class="sunset_info">Sunset</p>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        </div>
+        
+        <div class="f glass">
+          <div id="calendar" style="width: 100%; height: 10%; font-size: 14px;"></div>
+        </div>
+
+        <div class="g glass">
+            <section class="middle">
+                <div class="place" id="place"></div>
+                <div class="temp" id="temperature"></div>
+                <div class="desc-icon">
+                  <div class="description" id="description"></div>
+                  <img src="http://openweathermap.org/img/wn/10n@2x.png" alt="" id="icon">
+              </div>
+              </section>
+        </div>
+
+        <div class="h glass">
+                <div class="weather">
+                  <div class="details">
+        
+                    <div class="col" id="humidity">
+                      <img class="humi" src="https://static-00.iconduck.com/assets.00/humidity-icon-2048x1675-xxsge5os.png">
+                      <div class="info">
+                          <p class="humidity" id="humidity-value"></p>
+                          <p class="humidity_info">Humidity</p>
+                      </div>
+                    </div>
+                  
+                    <div class="col" id="windSpeed">
+                      <img class="humi" style="color:white" src="https://cdn-icons-png.flaticon.com/512/136/136712.png">
+                      <div class="info">
+                          <p class="wind_speed" id="wind_speed-value"></p>
+                          <p class="wind_speed_info">Wind Speed</p>
+                      </div>
+                    </div>
+                  
+                  </div>
+                </div>
+        </div>
+
+        <div class="i glass">
+            <div class="weather">
+                <div class="details">
+      
+                  <div class="col" id="pressure">
+                      <img src="https://cdn-icons-png.flaticon.com/512/136/136709.png">
+                      <div class="info">
+                          <p class="pressure" id="pressure-value"></p>
+                          <p class="pressure_info">Pressure</p>
+                      </div>
+                  </div>
+      
+                  <div class="col" id="feelsLike">
+                      <img src="https://cdn-icons-png.flaticon.com/512/136/136716.png">
+                      <div class="info">
+                          <p class="feels_like" id="feels_like-value"></p>
+                          <p class="feels_like_info">Feels Like</p>
+                      </div>
+                  </div>
+                
+                </div>
+              </div>
+        </div>
+
+        <div class="j glass">
+            Created w/ 💙 by Christian Deladia
+        </div>
+
+        <div class="k glass">
+          <div class="weather">
+            <div class="details">
+              <div class="col" id="">
+                <div class="info">
+                    <p class="wind_speed" id="rain-chance"></p>
+                    <p class="wind_speed_info">Chance of Rain</p>
+                </div>
+              </div>
+            </div>
+          </div>
+         </div>
+
+
+        <div class="l glass">
+          <div class="InputContainer">
+                <input type="text" name="text" class="input" id="cityInput" placeholder="Search..">
+                
+                <label for="cityInput" class="labelforsearch">
+                  
+              </label>
+              <button class="searchButton" onclick="searchWeather()"><i class="fas fa-search searchIcon"></i></button>
+              
+                <div class="border"></div>
+
+                <button class="micButton" onclick="openmicsearchWeather()">
+                  <i class="fas fa-microphone micIcon"></i>
+              </button>
+            </div>
+        </div>
+
+        <div class="m glass">
+          <div class="Weekdays" id="hourly-weather">
+
+        </div>
+        </div>
+
+        <div class="n glass">
+          <h2>Daily Forecast</h2>
+          <div id="forecast"></div>
+        </div>
+
+    </div>
+</main>
+
+    <script src="js/fullcalendar.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js"></script>
+</body>
+</html>

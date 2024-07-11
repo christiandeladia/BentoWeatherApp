@@ -1,0 +1,53 @@
+.bg_day {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../image/bg_day.jpg');
+    background-size: cover;
+    text-shadow: 2px 2px 5px rgb(23, 23, 23);
+    background-repeat: no-repeat;
+  }
+  
+  .bg_night {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../image/bg_night.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .bg_sunrise {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../image/bg_sunrise.jpg");
+    background-size: cover;
+    text-shadow: 2px 2px 5px rgb(23, 23, 23);
+    background-repeat: no-repeat;
+  }
+  
+  .bg_sunset {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../image/bg_sunset.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .bg_black {
+    background-color: black;
+    background-image: none;
+}
